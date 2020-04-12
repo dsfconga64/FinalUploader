@@ -2,11 +2,16 @@ package com.proyecto.demo.domain;
 
 import com.microsoft.azure.spring.data.cosmosdb.core.mapping.Document;
 import com.microsoft.azure.spring.data.cosmosdb.core.mapping.PartitionKey;
+
+import java.io.Serializable;
+
 import org.springframework.data.annotation.Id;
 
 @Document(collection = "tUser")
-public class User {
-
+public class User implements Serializable {
+	
+	private static final long serialVersionUID = -295422703255886286L;
+	
     @Id
     private String id;
     private String firstName;
@@ -20,6 +25,10 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
+    }
+    
+    public User(String firstName) {
+        this.firstName = firstName;
     }
 
     public User() {

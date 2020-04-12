@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<azure.version>2.2.0</azure.version>
+		<azure.version>2.2.4</azure.version>
 	</properties>
 
 	<dependencies>
@@ -29,8 +29,20 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+		    <groupId>com.microsoft.azure</groupId>
+		    <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
+		    
+		</dependency>
+
+		<dependency>
 			<groupId>com.microsoft.azure</groupId>
 			<artifactId>azure-spring-boot-starter</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>javax.jms</groupId>
+		    <artifactId>javax.jms-api</artifactId>
+		    <version>2.0.1</version>
 		</dependency>
 		
 		<dependency>
@@ -38,7 +50,6 @@
 		    <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
 		</dependency>
 		
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
