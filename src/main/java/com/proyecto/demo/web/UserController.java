@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.proyecto.demo.domain.User;
 import com.proyecto.demo.service.UserService;
 
+import reactor.core.publisher.Flux;
+
 @Controller
 public class UserController {
 
@@ -27,6 +29,10 @@ public class UserController {
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
-	
+	@RequestMapping(value = "/user", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Flux<User> getUser() {
+		
+		return serv.getAllUsers();
+	}
 	
 }

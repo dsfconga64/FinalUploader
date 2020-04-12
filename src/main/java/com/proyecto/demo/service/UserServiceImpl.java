@@ -23,8 +23,8 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public List<User> getAllUsers() {
-		return (List<User>) repo.findAll();
+	public Flux<User> getAllUsers() {
+		return repo.findAll();
 	}
 
 }

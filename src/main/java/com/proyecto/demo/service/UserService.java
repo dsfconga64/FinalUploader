@@ -4,10 +4,12 @@ import java.util.List;
 
 import com.proyecto.demo.domain.User;
 
+import reactor.core.publisher.Flux;
+
 
 
 public interface UserService {
 	
 	public void saveUser(User newUser);
-	public List<User> getAllUsers();
+	public Flux<User> getAllUsers();
 }
